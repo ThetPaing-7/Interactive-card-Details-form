@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cards</title>
+    <!-- Css link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Js file -->
+     <script src="jsfile.js" defer></script>
+
+     <!-- Google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main container -->
+     <div class="mainContainer">
+        <!-- Left container -->
+        <div class="leftContainer"></div>
+        <!-- Right container -->
+        <div class="rightContainer">
+            <!-- From goes here -->
+            <div class="fromHolder">
+                <form method="post">
+                    <h2>Fill your Information</h2>
+                    <!-- For cardholder name -->
+                    <div>
+                        <label for="name">Cardholder Name:</label>
+                        <input type="text" id="cardholder-name" name="cardholder-name" placeholder="e.g John Helen"  maxlength="20" required>
+                    </div>
+                    <!-- For cardholder  -->
+                      <div>
+                        <label for="cardnumbers">Cardnumers</label>
+                        <input type="number" id="cardnumbers" cardnumbers="cardnumbers" placeholder="e.g 1234 1234 1234 1234"  minlength="16" maxlength="16" required>
+                    </div>
+                    <!-- For date month and cvc -->
+                     <div class="dateAndTime">
+                        <div>
+                            <label for="expDate">EXP.Date (MM/YY)</label>
+                            <input type="month" id="expDate" name="expDate" placeholder="May 2018" required>
+                        </div>
+                        <div>
+                            <label for="cvc">CVC</label><input type="number" id="cvc" placeholder="e.g 123" maxlength="3" required>
+                        </div>
+                     </div>
+                     <!-- ===================================== -->
+                      <button id="submit">Confirm</button>
+                </form>
+            </div>
+        </div>
+     </div>
+    
+</body>
+</html>
