@@ -18,6 +18,7 @@
     --heading-font-size:32px;
     --body-font:"Playfair Display", serif;
     --label-font-size:12px;
+    --input-font-sieze:15px
 }
 
 .mainContainer{
@@ -27,7 +28,7 @@
 }
 
 .leftContainer{
-    grid-area: 1 / 1 / 2 / 2;
+    grid-column: 1 / 1 / 2 / 2;     
 }
 
 .rightContainer{
@@ -58,14 +59,71 @@ form label{
     font-size: var(--label-font-size);
     font-family: var(--body-font);
     font-weight: 800;
+    margin: 5px 0px;
 }
 
 form input{
     font-family: var(--body-font);
-    font-weight: 400;
+    font-size: var(--input-font-sieze);
+    font-weight: 500;
     border: 1px solid gray;
-    font-style: italic;
     height: 30px;
     border-radius: 5px;
     padding: 10px;
+}
+
+form input:invalid{
+    border: 1px solid rgb(255, 0, 0);
+
+}
+
+form input:valid{
+    border: 1px solid rgb(61, 11, 240);
+}
+
+form #submit{
+margin: 0 auto;
+ width: 9em;
+ height: 3em;
+ border-radius: 30em;
+ font-size: 15px;
+ font-family: inherit;
+ border: none;
+ position: relative;
+ overflow: hidden;
+ z-index: 1;
+ box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+form #submit::before{
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+     position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #ee15e7 0%, #1f40d3 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+form #submit:hover::before {
+ width: 9em;
+}
+
+.frontCard{
+    width: 250px;
+    height: 150px;
+    background-color: #ee15e7;
+    position: absolute;
+}
+
+.BackCard{
+     width: 250px;
+    height: 150px;
+    background-color: #ee15e7;
+    position: absolute;
 }
