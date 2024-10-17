@@ -20,7 +20,8 @@
         <!-- Left container -->
         <div class="leftContainer">
             <div class="frontCard">
-                <!-- Logo svg -->
+                <div class="icons">
+                        <!-- Logo svg -->
                 <svg class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 48 48">
             <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path><path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path><path fill="#ff3d00" d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"></path>
             </svg>
@@ -52,6 +53,8 @@
               MjMtMDItMTNUMDg6MTU6MjkrMDA6MDA0eo8JAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTAy
               LTEzVDA4OjE1OjI5KzAwOjAwY2+u1gAAAABJRU5ErkJggg=="></image>
             </svg>
+                </div>
+        <!--================================================================= -->
             <p id="cardNumbers"></p>
             <div class="nameAndExpdate">
                 <p id="cardholderName"></p>
@@ -59,6 +62,7 @@
             </div>
             </div>
             <div class="BackCard">
+                <div class="line"></div>
                 <p id="cvcNumbers"></p>
             </div>
         </div>
@@ -66,7 +70,7 @@
         <div class="rightContainer">
             <!-- From goes here -->
             <div class="fromHolder">
-                <form method="post">
+                <form method="post" id="dataForm">
                     <h2>Fill your Information</h2>
                     <!-- For cardholder name -->
                     <div>
@@ -76,7 +80,7 @@
                     <!-- For cardholder  -->
                       <div>
                         <label for="cardnumbers">Cardnumers</label>
-                        <input type="text" inputmode="numeric" id="cardnumbers" cardnumbers="cardnumbers" pattern="\d*" placeholder="e.g 1234 1234 1234 1234" minlength="16" maxlength="16" required>
+                        <input type="number" id="cardnumbers" cardnumbers="cardnumbers" pattern="\d*" placeholder="e.g 1234 1234 1234 1234" min="1000000000000000" max="9999999999999999" required>
                     </div>
                     <!-- For date month and cvc -->
                      <div class="dateAndTime">
@@ -85,12 +89,14 @@
                             <input type="month" id="expDate" name="expDate" placeholder="May 2018" required>
                         </div>
                         <div>
-                            <label for="cvc">CVC</label><input type="text" inputmode="numeric" id="cvc" pattern="\d*" placeholder="e.g 123" maxlength="3" required>
+                            <label for="cvc">CVC</label><input type="number" id="cvc" pattern="\d*" placeholder="e.g 123" min="100" max="999" required>
                         </div>
                      </div>
                      <!-- ===================================== -->
+                       <p id="error-message" style="color: red" margn="10px auto"></p>
                       <button id="submit">Confirm</button>
                 </form>
+               
             </div>
         </div>
      </div>
