@@ -19,12 +19,39 @@ submitButton.addEventListener('click',(event)=>{
 
     if(numbers === '' || name === '' || expdate === '' || cvc === ''){
         errorMessage.textContent = 'Please fill the all the field correctly.';
-    }else if(!form.checkValidity()){
+    }else if(isOnlyNumbers(numbers) == false || isOnlyNumbers(cvc) == false){
+        errorMessage.textContent = 'Please fill numbers only'
+    }
+    else if(!form.checkValidity()){
         errorMessage.textContent = 'Please fill the all the field correctly.';
     }else{
-        cardNumber.textContent = numbers;
+        cardNumber.textContent = fourGroup(numbers);
         cardholderName.textContent = name;
         expiredDate.textContent = expdate;
         cvcNumbers.textContent = cvc;
     }
 });
+
+
+// Check whether input has other than numbers
+function isOnlyNumbers(text){
+    let words = text.split('');
+    for(let i = 0; i < words.length; i++){
+        if(!(words[i].charCodeAt(0) >= 48 && words[i].charCodeAt(0) <= 59)){
+            return false;
+        }
+    }
+    return true;
+}
+
+//To Display numbers with four-numbersGroup
+function fourGroup(num) {
+    let eachNum = num.split(''); 
+    let bankNumbers = [
+        eachNum.slice(0, 4).join(''),
+        eachNum.slice(4, 8).join(''),
+        eachNum.slice(8, 12).join(''),
+        eachNum.slice(12, 16).join('')
+    ];
+    return bankNumbers.join(' ');
+}

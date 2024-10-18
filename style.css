@@ -17,13 +17,17 @@
 :root{
     --heading-font-size:32px;
     --body-font:"Playfair Display", serif;
-    --label-font-size:12px;
+    --label-font-size:15px;
     --input-font-sieze:15px;
     --card-bg-color:black;
     --cardholderColor:gold;
     --cardNumbersColor:red;
+    --formbgColor:#99A8B2;
     --expColor:blue;
     --cvcColor:red;
+    --leftContainerbgColor:#181937;
+    --rightContainerbgColor:#495464;
+    --formTextColor:black;
 }
 
 .mainContainer{
@@ -33,11 +37,13 @@
 }
 
 .leftContainer{
+    background-color: var(--leftContainerbgColor);
     grid-column: 1 / 1 / 2 / 2;
     position: relative;     
 }
 
 .rightContainer{
+    background-color: var(--rightContainerbgColor);
     grid-area: 1 / 2 / 2 / 3 ;
     display: flex;
     align-items: center;
@@ -45,9 +51,13 @@
 }
 
 form{
+    padding: 20px;
+    background-color: var(--formbgColor);
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    border-radius: 20px;
+    color:var(--formTextColor);
 }
 
 form div{
@@ -71,11 +81,18 @@ form label{
 form input{
     font-family: var(--body-font);
     font-size: var(--input-font-sieze);
-    font-weight: 500;
+    font-weight: bolder;
     border: 1px solid gray;
     height: 30px;
     border-radius: 5px;
     padding: 10px;
+    background-color: #E8E8E8;
+}
+form input:focus{
+    background-color: white;
+}
+form input::placeholder-shown {
+    border: 1px solid rgb(61, 11, 240); 
 }
 
 form input:invalid{
@@ -84,22 +101,25 @@ form input:invalid{
 }
 
 form input:valid{
-    border: 1px solid rgb(61, 11, 240);
+    border: 2px solid rgb(53, 62, 244);
+    background-color: white;
 }
+
 
 form #submit{
 margin: 0 auto;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  width: 9em;
  height: 3em;
  border-radius: 30em;
  font-size: 15px;
- font-family: inherit;
+ font-weight: bold;
  border: none;
  position: relative;
  overflow: hidden;
  z-index: 1;
- box-shadow: 6px 6px 12px #c5c5c5,
-             -6px -6px 12px #ffffff;
+ box-shadow: 6px 6px 12px #181937,
+             -6px -6px 12px #495464;
 }
 
 form #submit::before{
@@ -155,14 +175,13 @@ form #submit:hover::before {
 }
 
 .BackCard{
-    right: 0;
+    right: -10%;
     bottom: 20%;
     padding: 0;
 }
 
 #cardNumbers{
     color: var(--cardNumbersColor);
-    position: absolute;
     top: 70%;
 }
 
@@ -176,12 +195,22 @@ form #submit:hover::before {
 }
 
 #cvcNumbers{
+    background-color: #c0c0c0a7;
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    top:35%;
+    right: 20%;
     color: var(--cvcColor);
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid hsl(61, 49%, 72%) ;
+    color: gold;
 }
 
 .BackCard .line{
  width: 100%;
- height: 3%;
+ height: 10%;
   background: hsl(61, 49%, 72%);
   margin: 20px 0;
 }
